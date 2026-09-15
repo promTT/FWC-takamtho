@@ -1,0 +1,19 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+}
+
+td, th {
+    border: 1px solid;
+    text-align: left;
+    padding: 8px;
+}
+
+.Firstcell {
+    background-color: aquamarine;
+}
+
+.Secondcell {
+    background-color: blueviolet;
+}

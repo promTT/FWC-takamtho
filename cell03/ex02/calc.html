@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            position: relative;
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.pinimg.com/736x/84/68/8f/84688fe3412d13161365b1b7436ca96c.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+            transition: background-color 0.5s ease;
+        }
+
+        .background:hover {
+            background-color: rgba(0, 0, 0, 0.75);
+        }
+
+        .backgroundblack {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            z-index: 0;
+        }
+        .calculator {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            position: relative;
+        }
+        input, select, button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="backgroundblack"></div> <!-- Move this line above the background image -->
+    <div class="calculator">
+        <input type="number" id="leftOperand" placeholder="Left operand" min="0">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="number" id="rightOperand" placeholder="Right operand" min="0">
+        <button id="calculateBtn">Try me!</button>
+    </div>
+
+    <script>
+        document.getElementById('calculateBtn').addEventListener('click', function() {
+            const leftOperand = document.getElementById('leftOperand').value;
+            const operator = document.getElementById('operator').value;
+            const rightOperand = document.getElementById('rightOperand').value;
+
+            if (leftOperand === '' || rightOperand === '' || leftOperand < 0 || rightOperand < 0) {
+                alert('Error :(');
+                console.log('Error :(');
+                return;
+            }
+
+            const left = parseInt(leftOperand);
+            const right = parseInt(rightOperand);
+            let result;
+
+            switch (operator) {
+                case '+':
+                    result = left + right;
+                    break;
+                case '-':
+                    result = left - right;
+                    break;
+                case '*':
+                    result = left * right;
+                    break;
+                case '/':
+                    if (right === 0) {
+                        alert("It's over 9000!");
+                        console.log("It's over 9000!");
+                        return;
+                    }
+                    result = left / right;
+                    break;
+                case '%':
+                    if (right === 0) {
+                        alert("It's over 9000!");
+                        console.log("It's over 9000!");
+                        return;
+                    }
+                    result = left % right;
+                    break;
+                default:
+                    alert('Error :(');
+                    console.log('Error :(');
+                    return;
+            }
+
+            alert(result);
+            console.log(result);
+        });
+
+        setInterval(function() {
+            alert('Please, use me...');
+        }, 30000);
+    </script>
+</body>
+</html>

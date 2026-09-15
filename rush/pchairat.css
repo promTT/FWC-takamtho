@@ -1,0 +1,152 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e4f1fe;
+    color: #e4f1fe;
+    min-height: 200vh;
+}
+
+.header {
+    background-color: #22313f;
+    color: #e4f1fe;
+    padding: 5% 0;
+    text-align: center;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: #22313f;
+    overflow-x: hidden;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+    display: flex;
+    justify-content: flex-start;
+}
+
+.navbar ul li {
+    flex-grow: 1;
+}
+
+.navbar li:nth-child(2) {
+    margin-left: auto;
+}
+
+.navbar li:nth-child(3) {
+    flex-grow: 2;
+}
+
+.navbar li:nth-child(n+4) {
+    text-align: center;
+}
+
+.navbar li a {
+    display: block;
+    color: #e4f1fe;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.navbar li a:hover {
+    background-color: #34495e;
+    font-weight: bold;
+    font-style: italic;
+    font-size: large;
+}
+
+.home-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.profile {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #34495e;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.profile img {
+    width: 25%;
+    margin: 20px;
+    border-radius: 5%;
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #34495e;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.section h2 {
+    color: #fff;
+}
+
+.section a {
+    text-decoration: none;
+    color: #8dc6ff;
+    font-weight: bold;
+}
+
+.section p {
+    font-size: 16px;
+}
+
+.skill {
+    margin: 20px 0;
+}
+
+.skill h3 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.progress-bar {
+    background-color: #22313f;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    background-color: #8dc6ff;
+    height: 20px;
+    width: 0;
+    transition: width 1s;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #22313f;
+    color: #fff;
+    margin-top: auto;
+}
+
+.social-icons {
+    margin: 10px 0;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+}

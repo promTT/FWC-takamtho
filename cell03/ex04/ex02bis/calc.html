@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            position: relative;
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.pinimg.com/736x/84/68/8f/84688fe3412d13161365b1b7436ca96c.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+            transition: background-color 0.5s ease;
+        }
+
+        .background:hover {
+            background-color: rgba(0, 0, 0, 0.75);
+        }
+
+        .backgroundblack {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            z-index: 0;
+        }
+        .calculator {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            position: relative;
+        }
+        input, select, button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 1rem;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="backgroundblack"></div>
+    <div class="calculator">
+        <input type="text" id="leftOperand" placeholder="Left operand">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="rightOperand" placeholder="Right operand">
+        <button id="calculateBtn">Try me!</button>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#calculateBtn').on('click', function(){
+
+                const leftOperand = $('#leftOperand').val();
+                const operator = $('#operator').val();
+                const rightOperand = $('#rightOperand').val();
+
+                const regularExpression = /[^0-9]+/; // ^ selected other 0 - 9
+
+                if (regularExpression.test(leftOperand) || regularExpression.test(rightOperand)) {  // .test run for matching?
+                    alert('Error :(');
+                    return;
+                }
+
+                const left = parseInt(leftOperand); // parseInt is function in js for convert string to integer and stop with found other out of number
+                const right = parseInt(rightOperand);
+
+                let result;
+                switch (operator) {
+                    case '+':
+                        result = left + right;
+                        break;
+                    case '-':
+                        result = left - right;  
+                        break;
+                    case '*':
+                        result = left * right;
+                        break;
+                    case '/':
+                        if (right === 0) {
+                            alert("It's over 9000!");
+                            console.log("It's over 9000!")
+                            return;
+                        }
+                        result = left / right;
+                        break;
+                    case '%':
+                        if (right === 0) {
+                            alert("It's over 9000!");
+                            console.log("It's over 9000!")
+                            return;
+                        }
+                        result = left % right;
+                        break;
+                    default:
+                        alert('Error :(');
+                        return;
+                }
+                alert(result);
+                console.log(result);
+            });
+
+            setInterval(function() {        // function in js input 2 value function, time and do to end web
+                alert('Please, use me...');
+            }, 30000);
+        });
+    </script>
+</body>
+</html>
