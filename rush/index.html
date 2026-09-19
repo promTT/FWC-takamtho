@@ -1,108 +1,60 @@
-<!doctype html>
-<html lang="th">
-
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>rush Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Portfolio | Welcome</title>
+  <link rel="stylesheet" href="styles/index_style.css" />
 </head>
-
 <body>
-    <nav class="navbar">
-        <a class="logo" href="#person1">Portfolio</a>
-        <ul class="nav-links">
-            <li class="dropdown">
-                <details>
-                    <summary>ธนดล</summary>
-                    <ul class="dropdown-menu">
-                        <li><a href="#person1">เกี่ยวกับ</a></li>
-                        <li><a href="#showcase1">ผลงาน</a></li>
-                        <li><a href="#contact1">ติดต่อ</a></li>
-                    </ul>
-                </details>
-            </li>
-            <li class="dropdown">
-                <details>
-                    <summary>โปรไฟล์ B</summary>
-                    <ul class="dropdown-menu">
-                        <li><a href="#person2">เกี่ยวกับ</a></li>
-                        <li><a href="#showcase2">ผลงาน</a></li>
-                        <li><a href="#contact2">ติดต่อ</a></li>
-                    </ul>
-                </details>
-            </li>
-        </ul>
-    </nav>
 
-    <section id="person1" class="profile-section light-bg">
-        <div class="container">
-            <div class="about">
-                <img src="./images/tanadol.png" alt="รูปโปรไฟล์ของนายธนดล แกมทอง" class="profile-pic" />
-                <h2>นาย ธนดล แกมทอง</h2>
-                <p>
-                    สวัสดีครับ ผมชื่อ ธนดล แกมทอง สนใจไมโครคอนโทรลเลอร์
-                    (Microcontroller) ชอบการต่อวงจรและเขียนโปรแกรม C พื้นฐาน
-                </p>
-            </div>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Portfolio</a>
+    
+    <ul class="nav-links">
+      
+      <li class="dropdown">
+        <details>
+          <summary>Portfolios</summary>
+          <ul class="dropdown-menu">
+            <li><a href="takamtho.html">ธนดล</a></li>
+            <li><a href="ptangpan.html">ปรียนิตย์</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </nav>
 
-            <div id="showcase1" class="showcase">
-                <h3>ความสามารถและผลงาน</h3>
-                <ul>
-                    <li>เขียนโปรแกรมภาษา C และ JavaScript เบื้องต้น</li>
-                    <li>ออกแบบวงจรด้วย Arduino และเซนเซอร์พื้นฐาน</li>
-                    <li>สร้างเว็บไซต์ Portfolio แบบ Responsive</li>
-                </ul>
-            </div>
+  <main class="portfolios-container">
+    <div class="section-title">
+    </div>
 
-            <div id="contact1" class="contact">
-                <h3>ช่องทางการติดต่อ (Contact)</h3>
-                <p>
-                    <a href="mailto:tanadolkamthong@gmail.com">Email</a>
-                    <span aria-hidden="true">|</span>
-                    <a href="https://github.com/promTT" target="_blank" rel="noreferrer">GitHub</a>
-                    <span aria-hidden="true">|</span>
-                    <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-                </p>
-            </div>
-        </div>
-    </section>
+    <div class="cards-grid">
+      
+      <div class="portfolio-card">
+        <img src="images/tanadol.png" alt="Profile photo of Person 1" class="profile-photo">
+        
+        <h3>ธนดล</h3>
+        <a href="takamtho.html" class="btn-portfolio">View Portfolio &rarr;</a>
+      </div>
 
-    <section id="person2" class="profile-section dark-bg">
-        <div class="container">
-            <div class="about">
-                <img src="./images/p2.png" alt="รูปโปรไฟล์ตัวอย่างของนาย B" class="profile-pic" />
-                <h2>นาย B - วิศวกรรมไฟฟ้า ปี 1</h2>
-                <p>
-                    สวัสดีครับ ผมชื่อ B ชอบเรื่องระบบควบคุม (Control Systems)
-                    และการออกแบบวงจรดิจิทัล (Digital Circuits) ตอนนี้กำลังศึกษาเรื่อง
-                    Logic Gates
-                </p>
-            </div>
+      <div class="portfolio-card">
+        <img 
+          src="images/preeyanit.jpg" 
+          alt="Profile photo of Person 2" 
+          class="profile-photo"
+        >
+        
+        <h3>ปรียนิตย์</h3>
+        <a href="ptangpan.html" class="btn-portfolio">View Portfolio &rarr;</a>
+      </div>
 
-            <div id="showcase2" class="showcase">
-                <h3>ความสามารถและผลงาน</h3>
-                <ul>
-                    <li>ศึกษาระบบควบคุมและ Logic Gates</li>
-                    <li>ทดลองสร้างวงจรดิจิทัลบน Breadboard</li>
-                    <li>ทำโปรเจกต์จำลองระบบไฟจราจร</li>
-                </ul>
-            </div>
+    </div>
+  </main>
 
-            <div id="contact2" class="contact">
-                <h3>ช่องทางการติดต่อ (Contact)</h3>
-                <p>
-                    <a href="mailto:personB@example.com">Email</a>
-                    <span aria-hidden="true">|</span>
-                    <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-                    <span aria-hidden="true">|</span>
-                    <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-                </p>
-            </div>
-        </div>
-    </section>
+  <footer>
+    <p>&copy; 2026 takamtho ptangpan</p>
+  </footer>
 
-    <script src="script.js"></script>
 </body>
-
 </html>
